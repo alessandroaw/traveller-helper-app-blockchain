@@ -6,7 +6,7 @@ const transactionSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    paymentAddress: {
+    helperAddress: {
         type: String,
         unique: true,
         trim: true
