@@ -1,7 +1,3 @@
----
-title: Traveller Helper
----
-
 # Traveller Helper
 Saat berlibur ke luar negeri, turis-turis akan mengabadikan momen dengan mengambil gambar dengan kamera ataupun gawai yang mereka miliki. 
 
