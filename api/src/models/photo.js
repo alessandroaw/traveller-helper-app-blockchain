@@ -4,19 +4,12 @@ const Web3 = require('web3');
 const photoSchema = new mongoose.Schema({
     index: {
         type: Number,
+        unique: true,
         required: true
-    },
-    image: {
-        type: String,
-        required: true,
-        trim: true
     }, 
     imagePath: {
         type: String,
         required: true
-    },
-    imageHash: {
-        type: String
     },
     travellerAddress: {
         type: String,
@@ -33,21 +26,6 @@ const photoSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    price: {
-        type: Number,
-        required: true
-    }
-});
-
-// hashing photo before saving it to the database
-photoSchema.pre('save', async function(next) {
-    const photo = this;
-
-    if (photo.isModified('image')) {
-        photo.imageHash = Web3.utils.keccak256(`${new Date().toISOString()}-${photo.image}`)
-    }
-
-    next();
 });
 
 const Photo = mongoose.model('Photo', photoSchema);
