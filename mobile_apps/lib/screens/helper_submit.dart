@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_helper/components/icon_label.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
 import 'package:traveller_helper/components/secondary_app_bar.dart';
 import 'package:traveller_helper/components/page_heading.dart';

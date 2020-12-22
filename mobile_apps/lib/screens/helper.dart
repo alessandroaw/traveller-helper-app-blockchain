@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_helper/components/th_bottom_bar.dart';
+import 'package:traveller_helper/services/contract_manager.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
 import 'package:traveller_helper/components/secondary_app_bar.dart';
 import 'package:traveller_helper/components/page_heading.dart';
@@ -10,6 +11,9 @@ enum PhotoStatus { ACCEPTED, PENDING, REJECTED }
 class HelperPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ContractManager cm = ContractManager();
+    cm.getBalance().then((value) => print(value));
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
