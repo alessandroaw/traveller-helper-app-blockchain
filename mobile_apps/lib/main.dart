@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:traveller_helper/screens/helper.dart';
+import 'package:traveller_helper/screens/helper_submit.dart';
 import 'package:traveller_helper/screens/traveller.dart';
 import 'package:traveller_helper/screens/traveller_order.dart';
 
@@ -13,18 +15,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primaryColor: Colors.teal,
-        accentColor: Colors.teal.shade100,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Colors.teal,
-          selectedItemColor: Colors.white,
-        )
-      ),
+          primaryColor: Colors.teal,
+          accentColor: Colors.teal.shade100,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: Colors.teal,
+            selectedItemColor: Colors.white,
+          )),
       initialRoute: '/',
       routes: {
-        '/': (context) => Traveller(),
+        '/': (context) => HelperPage(),
+        '/helper': (context) => HelperPage(),
+        '/helper-submit': (context) => HelperSubmitPage(),
         '/traveller-order': (context) => TravellerOrder(),
+        '/traveller': (context) => Traveller(),
       },
     );
   }

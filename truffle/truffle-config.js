@@ -49,6 +49,7 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
 
+    contracts_build_directory: path.join(__dirname, "../mobile_apps/assets"),
     // ropsten: {
     //   provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
     //   network_id: 3,       // Ropsten's id
@@ -57,11 +58,6 @@ module.exports = {
     //   timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     //   skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
-  },
-
-  // Set default mocha options here, use special reporters etc.
-  mocha: {
-    // timeout: 100000
   },
 
   // Configure your compilers
