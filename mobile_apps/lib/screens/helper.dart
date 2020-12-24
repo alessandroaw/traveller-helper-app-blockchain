@@ -5,15 +5,13 @@ import 'package:traveller_helper/utilities/constraints.dart';
 import 'package:traveller_helper/components/secondary_app_bar.dart';
 import 'package:traveller_helper/components/page_heading.dart';
 import 'package:traveller_helper/components/icon_label.dart';
+import 'package:web3dart/contracts.dart';
 
 enum PhotoStatus { ACCEPTED, PENDING, REJECTED }
 
 class HelperPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ContractManager cm = ContractManager();
-    cm.getBalance().then((value) => print(value));
-
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -25,8 +23,14 @@ class HelperPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.camera_alt),
-        onPressed: () {
-          Navigator.pushNamed(context, '/helper-submit');
+        onPressed: () async {
+          print('loading ContractManager');
+          DeployedContract am =
+              await ContractManager().loadContract('AccountManager');
+          am.functions.forEach((element) {
+            print(element.name);
+          });
+          // Navigator.pushNamed(context, '/helper-submit');
         },
       ),
       body: SingleChildScrollView(
