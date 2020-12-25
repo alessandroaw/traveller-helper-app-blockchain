@@ -5,11 +5,37 @@ import 'package:traveller_helper/utilities/constraints.dart';
 import 'package:traveller_helper/components/secondary_app_bar.dart';
 import 'package:traveller_helper/components/page_heading.dart';
 import 'package:traveller_helper/components/icon_label.dart';
-import 'package:web3dart/contracts.dart';
+import 'package:traveller_helper/services/account_manager.dart';
+import 'package:web3dart/web3dart.dart';
 
 enum PhotoStatus { ACCEPTED, PENDING, REJECTED }
 
-class HelperPage extends StatelessWidget {
+class HelperPage extends StatefulWidget {
+  @override
+  _HelperPageState createState() => _HelperPageState();
+}
+
+class _HelperPageState extends State<HelperPage> {
+  AccountManager am;
+  var subscription;
+
+  void initializeAccountManager() async {
+    am = AccountManager(
+      contract: await ContractManager().loadContract(AccountManager.key),
+      credentials: await ContractManager().getCredentials(),
+    );
+
+    am.listenEvent((value) {
+      print(value);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    initializeAccountManager();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +50,8 @@ class HelperPage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.camera_alt),
         onPressed: () async {
-          print('loading ContractManager');
-          DeployedContract am =
-              await ContractManager().loadContract('AccountManager');
-          am.functions.forEach((element) {
-            print(element.name);
-          });
+          var temp = await am.enlistTraveller();
+          print(temp);
           // Navigator.pushNamed(context, '/helper-submit');
         },
       ),
