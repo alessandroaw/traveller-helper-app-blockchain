@@ -4,10 +4,10 @@ const userController = require('../controllers/user');
 const router = express.Router()
 
 router.post('/login', userController.login);
-router.post('/updateBalance', userController.updateUserBalance);
-router.post('/beTraveller', userController.userToTraveller);
-router.post('/travellerDeposit', userController.travellerDeposit);
+router.post('/updateBalance/:id', userController.updateUserBalance);
+router.post('/beTraveller/:id', userController.userToTraveller);
+router.post('/travellerDeposit/:id', userController.travellerDeposit);
 
-router.get('/user', userController.getUser);
+router.get('/:ethereumAddress', userController.getUser);
 
 module.exports = router;
