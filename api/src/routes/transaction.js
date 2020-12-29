@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const transactionController = require('../controllers/transaction');
 
-router.get('/:travellerAddress', transactionController.get);
-router.post('/', transactionController.post);
-router.post('/:id', transactionController.patch);
+router.get('/helper/:helperAddress', transactionController.getHelperTrans);
+router.get('/pending/:travellerAddress', transactionController.getPendingTrans);
+router.post('/create', transactionController.post);
+router.post('/confirmation/:id', transactionController.patch);
 
 module.exports = router;

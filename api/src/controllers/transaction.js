@@ -1,10 +1,27 @@
 const Transaction = require('../models/transaction');
 
-async function get(req, res, next) {
+async function getHelperTrans(req, res, next) {
+    const { helperAddress } = req.params;
+    try {
+        const transactions = await Transaction.find({ helperAddress }).populate('imageId');
+        res.status(200).send(transactions);
+    } catch (e) {
+        console.error(e);
+        res.status(400).send(e);
+    }
+}
+
+async function getPendingTrans(req, res, next) {
     const { travellerAddress } = req.params;
     try {
-        const transactions = await Transaction.find({ travellerAddress }).populate('imageId');
-        res.status(200).send(transactions);
+        var pendingTransactions = [];
+        const transactions = await Transaction.find({ travellerAddress: travellerAddress });
+        for (transaction of transactions) {
+           if (transaction.approval === 'Pending') {
+               pendingTransactions.push(transaction)
+           }
+        }
+        res.status(200).send(pendingTransactions);
     } catch (e) {
         console.error(e);
         res.status(400).send(e);
@@ -13,7 +30,7 @@ async function get(req, res, next) {
 
 async function post(req, res, next) {
     const transaction = new Transaction(req.body);
-
+    
     try {
         await transaction.save();
         res.status(201).send(transaction);
@@ -35,7 +52,8 @@ async function patch(req, res, next) {
 }
 
 module.exports = {
-    get,
+    getHelperTrans,
+    getPendingTrans,
     post,
     patch
 }

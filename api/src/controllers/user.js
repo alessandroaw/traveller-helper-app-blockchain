@@ -33,9 +33,10 @@ async function getUser(req, res, next) {
 }
 
 async function updateUserBalance(req, res, next) {
-    const { id } = req.params;
+    const { ethereumAddress } = req.params;
+    console.log(ethereumAddress)
     try {
-        const updatedBalance = await User.findByIdAndUpdate(id, {$set: {etherBalance: req.body.etherBalance}});
+        const updatedBalance = await User.findOneAndUpdate({ ethereumAddress }, {etherBalance: req.body.etherBalance}, {new: true});
         res.send(updatedBalance);
     } catch(e) {
         console.error(e);
@@ -44,9 +45,9 @@ async function updateUserBalance(req, res, next) {
 }
 
 async function userToTraveller(req, res, next) {
-    const { id } = req.params;
+    const { ethereumAddress } = req.params;
     try {
-        const travellerManagerAddress = await User.findByIdAndUpdate(id, {$set: {travellerManagerAddress: req.body.travellerManagerAddress}});
+        const travellerManagerAddress = await User.findOneAndUpdate(ethereumAddress, {travellerManagerAddress: req.body.travellerManagerAddress});
         res.send(travellerManagerAddress);
     } catch(e) {
         console.error(e);
@@ -55,9 +56,9 @@ async function userToTraveller(req, res, next) {
 }
 
 async function travellerDeposit(req, res, next) {
-    const { id } = req.params;
+    const { ethereumAddress } = req.params;
     try {
-        const travellerDepositEth = await User.findByIdAndUpdate(id, {$set: {travellerDeposit: req.body.travellerDeposit}});
+        const travellerDepositEth = await User.findOneAndUpdate(ethereumAddress, {travellerDeposit: req.body.travellerDeposit});
         res.send(travellerDepositEth);
     } catch(e) {
         console.error(e);
