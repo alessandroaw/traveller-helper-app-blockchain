@@ -46,15 +46,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Ownable.sol\":\"Ownable\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Ownable.sol\":{\"keccak256\":\"0xa0dd7408fd2b76388935b9e5407545275521dcf2a1bc69d8fb64e90f1426ffdc\",\"urls\":[\"bzz-raw://2416752d6f92306b60efda26bc0f744c4e3ffaf14e0ba875dbddcce0e171ac38\",\"dweb:/ipfs/QmQSPhY6V5Y324toMC8KzFsT67KzjSsd4ANV9Q4rDMok3E\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"isOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"isOwner()\":{\"details\":\"Returns true if the caller is the current owner.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Ownable.sol\":\"Ownable\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Ownable.sol\":{\"keccak256\":\"0xa0dd7408fd2b76388935b9e5407545275521dcf2a1bc69d8fb64e90f1426ffdc\",\"urls\":[\"bzz-raw://2416752d6f92306b60efda26bc0f744c4e3ffaf14e0ba875dbddcce0e171ac38\",\"dweb:/ipfs/QmQSPhY6V5Y324toMC8KzFsT67KzjSsd4ANV9Q4rDMok3E\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.6.0;\r\n\r\ncontract Ownable {\r\n    address private _owner;\r\n\r\n    constructor () internal {\r\n        _owner = msg.sender;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the address of the current owner.\r\n     */\r\n    function owner() public view returns (address) {\r\n        return _owner;\r\n    }\r\n\r\n    /**\r\n    * @dev Throws if called by any account other than the owner.\r\n    */\r\n    modifier onlyOwner() {\r\n        require(isOwner(), \"Ownable: caller is not the owner\");\r\n        _;\r\n    }\r\n    /**\r\n    * @dev Returns true if the caller is the current owner.\r\n    */\r\n    function isOwner() public view returns (bool) {\r\n        return (msg.sender == _owner);\r\n    }\r\n    \r\n    /**\r\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\r\n     * Can only be called by the current owner.\r\n     */\r\n    function transferOwnership(address newOwner) public virtual onlyOwner {\r\n        require(newOwner != address(0), \"Ownable: new owner is the zero address\");\r\n        _owner = newOwner;\r\n    }\r\n}\r\n\r\n",
-  "sourcePath": "/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Ownable.sol",
+  "sourcePath": "/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Ownable.sol",
   "ast": {
-    "absolutePath": "/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Ownable.sol",
+    "absolutePath": "/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         165
@@ -871,7 +871,7 @@
     "src": "0:1035:2"
   },
   "legacyAST": {
-    "absolutePath": "/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Ownable.sol",
+    "absolutePath": "/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Ownable.sol",
     "exportedSymbols": {
       "Ownable": [
         165
@@ -1692,8 +1692,8 @@
     "version": "0.6.0+commit.26b70077.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.1.0",
-  "updatedAt": "2020-12-10T08:39:54.754Z",
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-12-25T09:59:50.971Z",
   "devdoc": {
     "methods": {
       "isOwner()": {

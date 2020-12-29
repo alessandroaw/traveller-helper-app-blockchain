@@ -48,15 +48,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"last_completed_migration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"completed\",\"type\":\"uint256\"}],\"name\":\"setCompleted\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Migration.sol\":\"Migrations\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Migration.sol\":{\"keccak256\":\"0x8ab13c7e6412db163d7af92b79c64965555ea2f62a28f2e2d469e5e2deb33ace\",\"urls\":[\"bzz-raw://d7b3c880be92bb79eb4e1450377bb794109ce70e26f06277d3e7b160407163c3\",\"dweb:/ipfs/QmbpeXoUgL92gv4VPtULDugKnaLXAfpmVZ7zGXWy6dFF3o\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b5060008054600160a060020a0319163317905561014d806100326000396000f3fe608060405234801561001057600080fd5b506004361061005d577c01000000000000000000000000000000000000000000000000000000006000350463445df0ac81146100625780638da5cb5b1461007c578063fdacd576146100ad575b600080fd5b61006a6100cc565b60408051918252519081900360200190f35b6100846100d2565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6100ca600480360360208110156100c357600080fd5b50356100ee565b005b60015481565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff163314156101145760018190555b5056fea2646970667358221220c24be968fac0343c31a140b64d1124bbab4028dc1fa0f242fe489fa5347e48d964736f6c63430006000033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061005d577c01000000000000000000000000000000000000000000000000000000006000350463445df0ac81146100625780638da5cb5b1461007c578063fdacd576146100ad575b600080fd5b61006a6100cc565b60408051918252519081900360200190f35b6100846100d2565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6100ca600480360360208110156100c357600080fd5b50356100ee565b005b60015481565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff163314156101145760018190555b5056fea2646970667358221220c24be968fac0343c31a140b64d1124bbab4028dc1fa0f242fe489fa5347e48d964736f6c63430006000033",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"last_completed_migration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"completed\",\"type\":\"uint256\"}],\"name\":\"setCompleted\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Migration.sol\":\"Migrations\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Migration.sol\":{\"keccak256\":\"0x8ab13c7e6412db163d7af92b79c64965555ea2f62a28f2e2d469e5e2deb33ace\",\"urls\":[\"bzz-raw://d7b3c880be92bb79eb4e1450377bb794109ce70e26f06277d3e7b160407163c3\",\"dweb:/ipfs/QmbpeXoUgL92gv4VPtULDugKnaLXAfpmVZ7zGXWy6dFF3o\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060008054600160a060020a0319163317905561014d806100326000396000f3fe608060405234801561001057600080fd5b506004361061005d577c01000000000000000000000000000000000000000000000000000000006000350463445df0ac81146100625780638da5cb5b1461007c578063fdacd576146100ad575b600080fd5b61006a6100cc565b60408051918252519081900360200190f35b6100846100d2565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6100ca600480360360208110156100c357600080fd5b50356100ee565b005b60015481565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff163314156101145760018190555b5056fea264697066735822122000265311857efaa6104fedebc46fe2d496668d1fec5625aed4e18d91a774899264736f6c63430006000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061005d577c01000000000000000000000000000000000000000000000000000000006000350463445df0ac81146100625780638da5cb5b1461007c578063fdacd576146100ad575b600080fd5b61006a6100cc565b60408051918252519081900360200190f35b6100846100d2565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b6100ca600480360360208110156100c357600080fd5b50356100ee565b005b60015481565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60005473ffffffffffffffffffffffffffffffffffffffff163314156101145760018190555b5056fea264697066735822122000265311857efaa6104fedebc46fe2d496668d1fec5625aed4e18d91a774899264736f6c63430006000033",
   "sourceMap": "58:311:1:-:0;;;147:50;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;174:5:1;:18;;-1:-1:-1;;;;;;174:18:1;182:10;174:18;;;58:311;;;;;;",
   "deployedSourceMap": "58:311:1:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;58:311:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;106:36;;;:::i;:::-;;;;;;;;;;;;;;;;82:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;264:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;264:103:1;;:::i;:::-;;106:36;;;;:::o;82:20::-;;;;;;:::o;264:103::-;247:5;;;;233:10;:19;229:26;;;326:24:::1;:36:::0;;;229:26;264:103;:::o",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.0;\n\n\ncontract Migrations {\n  address public owner;\n  uint public last_completed_migration;\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n  modifier restricted() {\n    if (msg.sender == owner) _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n}",
-  "sourcePath": "/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Migration.sol",
+  "sourcePath": "/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Migration.sol",
   "ast": {
-    "absolutePath": "/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Migration.sol",
+    "absolutePath": "/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Migration.sol",
     "exportedSymbols": {
       "Migrations": [
         99
@@ -475,7 +475,7 @@
     "src": "32:337:1"
   },
   "legacyAST": {
-    "absolutePath": "/home/alessandro/Desktop/projects/traveller-helper/truffle/contracts/Migration.sol",
+    "absolutePath": "/home/jeffry/Documents/TravellerHelper/traveller-helper/truffle/contracts/Migration.sol",
     "exportedSymbols": {
       "Migrations": [
         99
@@ -903,10 +903,16 @@
       "links": {},
       "address": "0xa95543B921f5030CBcf501e2eC6268f8103FA1eC",
       "transactionHash": "0x0a713cc1dd37d83848803e0b5f5378effdf3d119639e40591690e4b2031f03fe"
+    },
+    "58343": {
+      "events": {},
+      "links": {},
+      "address": "0x829bdF64FA3fB15640381E8f8DA75dbD498d98aa",
+      "transactionHash": "0xb33ee2970de73f2e0ff2d4a4e477e2fb65ee969802c9d2c6dfc07faeb5451156"
     }
   },
-  "schemaVersion": "3.1.0",
-  "updatedAt": "2020-12-10T08:39:58.227Z",
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-12-25T10:00:23.113Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

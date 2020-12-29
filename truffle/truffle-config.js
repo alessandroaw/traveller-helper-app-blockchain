@@ -42,14 +42,23 @@ module.exports = {
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
-    //
-    ganache: {
-     host: "127.0.0.1",     // Localhost (default: none)
-     port: 7545,            // Standard Ethereum port (default: none)
-     network_id: "*",       // Any network (default: none)
-    },
 
-    contracts_build_directory: path.join(__dirname, "../mobile_apps/assets"),
+    // private blockchain geth 
+    development: {
+      network_id: "*",
+      host: "", //server host where geth is runnning
+      port: , //port where server geth is running
+      gas: 20000000,        
+      from: "0x75ad822a4b46ebcefa9c5529e54bf4de44183a80",
+      timeoutBlocks: 200,  
+    },
+    // ganache: {
+    //  host: "127.0.0.1",     // Localhost (default: none)
+    //  port: 7545,            // Standard Ethereum port (default: none)
+    //  network_id: "*",       // Any network (default: none)
+    // },
+
+    // contracts_build_directory: path.join(__dirname, "../mobile_apps/assets"),
     // ropsten: {
     //   provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
     //   network_id: 3,       // Ropsten's id
@@ -58,6 +67,7 @@ module.exports = {
     //   timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
     //   skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     // },
+
   },
 
   // Configure your compilers
