@@ -6,9 +6,8 @@ async function login(req, res, next) {
     console.log("This is request body of USER LGIN ", req.body);
     
     var userData = {
-        ethereumAddress: req.body.ethereumAddress,
-        etherBalance: req.body.etherBalance,
-        travellerManagerAddress: req.body.travellerManagerAddress,
+        ethereumAddress: req.body.ethereumAddress.toLowerCase(),
+        travellerManagerAddress: req.body.travellerManagerAddress.toLowerCase(),
         travellerDeposit: req.body.travellerDeposit
     }
 
@@ -24,20 +23,8 @@ async function login(req, res, next) {
 
 async function getUser(req, res, next) {
     try {
-        const user = await User.find({ethereumAddress: req.params.ethereumAddress});
+        const user = await User.findOne({ethereumAddress: req.params.ethereumAddress.toLowerCase()});
         res.status(200).send(user);
-    } catch(e) {
-        console.error(e);
-        res.status(400).send(e);
-    }
-}
-
-async function updateUserBalance(req, res, next) {
-    const { ethereumAddress } = req.params;
-    console.log(ethereumAddress)
-    try {
-        const updatedBalance = await User.findOneAndUpdate({ ethereumAddress }, {etherBalance: req.body.etherBalance}, {new: true});
-        res.send(updatedBalance);
     } catch(e) {
         console.error(e);
         res.status(400).send(e);
@@ -67,4 +54,4 @@ async function travellerDeposit(req, res, next) {
 }
 
 
-module.exports = {login, getUser, updateUserBalance, userToTraveller, travellerDeposit}
+module.exports = {login, getUser, userToTraveller, travellerDeposit}
