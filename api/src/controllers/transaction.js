@@ -3,7 +3,7 @@ const Transaction = require('../models/transaction');
 async function getHelperTrans(req, res, next) {
     const { helperAddress } = req.params;
     try {
-        const transactions = await Transaction.find({ helperAddress }).populate('imageId');
+        const transactions = await Transaction.find({ helperAddress: helperAddress.toLowerCase() }).populate('imageId');
         res.status(200).send(transactions);
     } catch (e) {
         console.error(e);
@@ -15,7 +15,7 @@ async function getPendingTrans(req, res, next) {
     const { travellerAddress } = req.params;
     try {
         var pendingTransactions = [];
-        const transactions = await Transaction.find({ travellerAddress: travellerAddress });
+        const transactions = await Transaction.find({ travellerAddress: travellerAddress.toLowerCase() });
         for (transaction of transactions) {
            if (transaction.approval === 'Pending') {
                pendingTransactions.push(transaction)

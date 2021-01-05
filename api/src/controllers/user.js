@@ -3,7 +3,7 @@ const User = require('../models/user');
 async function login(req, res, next) {
 
     // print request body
-    console.log("This is request body of USER LGIN ", req.body);
+    console.log("This is request body of USER LOGIN ", req.body);
     
     var userData = {
         ethereumAddress: req.body.ethereumAddress.toLowerCase(),
@@ -34,7 +34,7 @@ async function getUser(req, res, next) {
 async function userToTraveller(req, res, next) {
     const { ethereumAddress } = req.params;
     try {
-        const travellerManagerAddress = await User.findOneAndUpdate(ethereumAddress, {travellerManagerAddress: req.body.travellerManagerAddress});
+        const travellerManagerAddress = await User.findOneAndUpdate({ethereumAddress: ethereumAddress.toLowerCase()}, {travellerManagerAddress: req.body.travellerManagerAddress.toLowerCase()});
         res.send(travellerManagerAddress);
     } catch(e) {
         console.error(e);
@@ -45,7 +45,7 @@ async function userToTraveller(req, res, next) {
 async function travellerDeposit(req, res, next) {
     const { ethereumAddress } = req.params;
     try {
-        const travellerDepositEth = await User.findOneAndUpdate(ethereumAddress, {travellerDeposit: req.body.travellerDeposit});
+            const travellerDepositEth = await User.findOneAndUpdate({ethereumAddress: ethereumAddress.toLowerCase()}, {travellerDeposit: req.body.travellerDeposit});
         res.send(travellerDepositEth);
     } catch(e) {
         console.error(e);
