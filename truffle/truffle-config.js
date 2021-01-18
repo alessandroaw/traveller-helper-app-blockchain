@@ -47,9 +47,8 @@ module.exports = {
     development: {
       network_id: "*",
       host: "", //server host where geth is runnning
-      port: , //port where server geth is running
-      gas: 20000000,        
-      from: "0x75ad822a4b46ebcefa9c5529e54bf4de44183a80",
+      port: , //port where server geth is running       
+      from: "",
       timeoutBlocks: 200,  
     },
     // ganache: {

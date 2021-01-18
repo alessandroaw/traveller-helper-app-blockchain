@@ -1703,7 +1703,7 @@
     "version": "0.6.0+commit.26b70077.Emscripten.clang"
   },
   "networks": {
-    "5777": {
+    "1610976939525": {
       "events": {
         "0xb1ed47ced4562a888b3c47e728f82f7863e472cad724018fe1585bc6853ec82d": {
           "anonymous": false,
@@ -1739,51 +1739,12 @@
         }
       },
       "links": {},
-      "address": "0x34a1f1B7EC8fD55806215Cf831795cc7229FeEDE",
-      "transactionHash": "0xa2f661d05e95be02940ad68c40093ac99316330c362b8b984278ccbb724149f5"
-    },
-    "58343": {
-      "events": {
-        "0xb1ed47ced4562a888b3c47e728f82f7863e472cad724018fe1585bc6853ec82d": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "message",
-              "type": "string"
-            }
-          ],
-          "name": "Logging",
-          "type": "event"
-        },
-        "0xecd283654fb12bc20d9bd711dad16f95a5ab4fa60709fb687865f7b0073b9b8d": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "listedTraveller",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "travellerManager",
-              "type": "address"
-            }
-          ],
-          "name": "TravellerListing",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xBf9A6768f71Ee4d39029664d975c02F749b23f91",
-      "transactionHash": "0x76d5cfe1a9e559ad3e127a3daa380f87aabe8befee8f6ec100f710445d36d865"
+      "address": "0xCB06DEf5189da33A4Deb0E276533f127e1e5cF07",
+      "transactionHash": "0xee4e3bfbc05513acb2cfd86bebc32d9877226f334db78045b686c988141802f6"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-12-25T10:00:23.109Z",
+  "updatedAt": "2021-01-18T13:56:48.762Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
