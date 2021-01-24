@@ -6,10 +6,6 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         required: true,
     },
-    etherBalance: {
-        type: Number,
-        required: true
-    },
     travellerManagerAddress: {
         type: String,
     },

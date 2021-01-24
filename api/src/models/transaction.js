@@ -8,7 +8,7 @@ const transactionSchema = new mongoose.Schema({
     },
     helperAddress: {
         type: String,
-        unique: true,
+        required: true,
         trim: true
     },
     index: {
@@ -22,7 +22,7 @@ const transactionSchema = new mongoose.Schema({
     imageId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Photos'
+        ref: 'Photo'
     }
 });
 
