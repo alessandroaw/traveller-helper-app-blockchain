@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class IconLabel extends StatelessWidget {
+class THIconLabel extends StatelessWidget {
   final String text;
   final IconData icon;
 
-  IconLabel({this.text, this.icon});
+  THIconLabel({this.text, this.icon});
 
   @override
   Widget build(BuildContext context) {

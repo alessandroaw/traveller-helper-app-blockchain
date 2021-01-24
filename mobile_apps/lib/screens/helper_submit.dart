@@ -1,27 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
-import 'package:traveller_helper/components/secondary_app_bar.dart';
-import 'package:traveller_helper/components/page_heading.dart';
-import 'package:traveller_helper/components/th_bottom_bar.dart';
+import 'package:traveller_helper/components/components.dart';
 
 class HelperSubmitPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text(
-          'Traveller Helper',
-          style: kAppBarTextStyle,
-        ),
-        centerTitle: true,
-      ),
+      appBar: THAppBar(),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SecondaryAppBar(balance: '10 ETH'),
-              PageHeading(text: 'Submit'),
+              THPageHeading(text: 'Submit'),
               Image.network(
                 'https://picsum.photos/500',
                 height: 250,

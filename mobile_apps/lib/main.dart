@@ -3,8 +3,9 @@ import 'package:traveller_helper/routes.dart';
 import 'package:traveller_helper/services/contract_manager.dart';
 import 'package:traveller_helper/utilities/theme_data.dart';
 
-void main() {
-  ContractManager();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await ContractManager().initializeCreds();
   runApp(MyApp());
 }
 

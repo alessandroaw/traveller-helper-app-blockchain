@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_helper/components/th_bottom_bar.dart';
+import 'package:traveller_helper/components/components.dart';
 import 'package:traveller_helper/services/contract_manager.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
-import 'package:traveller_helper/components/secondary_app_bar.dart';
-import 'package:traveller_helper/components/page_heading.dart';
-import 'package:traveller_helper/components/icon_label.dart';
 import 'package:traveller_helper/services/account_manager.dart';
-import 'package:web3dart/web3dart.dart';
 
 enum PhotoStatus { ACCEPTED, PENDING, REJECTED }
 
@@ -22,7 +18,7 @@ class _HelperPageState extends State<HelperPage> {
   void initializeAccountManager() async {
     am = AccountManager(
       contract: await ContractManager().loadContract(AccountManager.key),
-      credentials: await ContractManager().getCredentials(),
+      credentials: ContractManager().credentials,
     );
 
     am.listenEvent((value) {
@@ -39,29 +35,13 @@ class _HelperPageState extends State<HelperPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text(
-          'Traveller Helper',
-          style: kAppBarTextStyle,
-        ),
-        centerTitle: true,
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.camera_alt),
-        onPressed: () async {
-          var temp = await am.enlistTraveller();
-          print(temp);
-          // Navigator.pushNamed(context, '/helper-submit');
-        },
-      ),
+      appBar: THAppBar(),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              SecondaryAppBar(),
-              PageHeading(text: 'Riwayat Bantuan'),
+              THPageHeading(text: 'Riwayat Bantuan'),
               HelpItem(
                 date: '24/12/2020',
                 photoUrl: 'https://picsum.photos/120',
@@ -132,7 +112,7 @@ class HelpItem extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       margin: EdgeInsets.only(left: 10),
-                      child: IconLabel(
+                      child: THIconLabel(
                         icon: Icons.monetization_on,
                         text: '0.2 ETH',
                       ),

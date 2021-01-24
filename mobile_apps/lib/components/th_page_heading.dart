@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
 
-class PageHeading extends StatelessWidget {
+class THPageHeading extends StatelessWidget {
   final String text;
 
-  PageHeading({this.text});
+  THPageHeading({this.text});
 
   @override
   Widget build(BuildContext context) {

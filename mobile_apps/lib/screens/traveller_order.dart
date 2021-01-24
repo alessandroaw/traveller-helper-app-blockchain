@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
-import 'package:traveller_helper/components/th_bottom_bar.dart';
-import 'package:traveller_helper/components/page_heading.dart';
-import 'package:traveller_helper/components/secondary_app_bar.dart';
-import 'package:traveller_helper/components/icon_label.dart';
+import 'package:traveller_helper/components/components.dart';
 
 class TravellerOrder extends StatefulWidget {
   @override
@@ -14,24 +11,19 @@ class _TravellerOrderState extends State<TravellerOrder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text(
-          'Traveller Helper',
-          style: kAppBarTextStyle,
-        ),
-        centerTitle: true,
-      ),
+      appBar: THAppBar(),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              SecondaryAppBar(),
-              PageHeading(text: 'Foto Anda'),
-              PhotoItem(photoUrl: 'https://picsum.photos/120', date: '2/12/2020'),
-              PhotoItem(photoUrl: 'https://picsum.photos/120', date: '2/12/2020'),
-              PhotoItem(photoUrl: 'https://picsum.photos/120', date: '2/12/2020'),
+              THPageHeading(text: 'Foto Anda'),
+              PhotoItem(
+                  photoUrl: 'https://picsum.photos/120', date: '2/12/2020'),
+              PhotoItem(
+                  photoUrl: 'https://picsum.photos/120', date: '2/12/2020'),
+              PhotoItem(
+                  photoUrl: 'https://picsum.photos/120', date: '2/12/2020'),
             ],
           ),
         ),
@@ -42,7 +34,6 @@ class _TravellerOrderState extends State<TravellerOrder> {
 }
 
 class PhotoItem extends StatelessWidget {
-
   final String photoUrl;
   final String date;
 
@@ -70,7 +61,7 @@ class PhotoItem extends StatelessWidget {
                   children: <Widget>[
                     Container(
                       margin: EdgeInsets.only(left: 10),
-                      child: IconLabel(
+                      child: THIconLabel(
                         icon: Icons.monetization_on,
                         text: '0.2 ETH',
                       ),

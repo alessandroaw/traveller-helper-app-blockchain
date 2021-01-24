@@ -25,20 +25,20 @@ module.exports = {
     // options below to some value.
 
     // private blockchain geth 
-    development: {
-      network_id: "*",
-      host: "", //server host where geth is runnning
-      port: , //port where server geth is running       
-      from: "",
-      timeoutBlocks: 200,  
-    },
-    // ganache: {
-    //  host: "127.0.0.1",     // Localhost (default: none)
-    //  port: 7545,            // Standard Ethereum port (default: none)
-    //  network_id: "*",       // Any network (default: none)
+    // development: {
+    //   network_id: "*",
+    //   host: "", //server host where geth is runnning
+    //   port: , //port where server geth is running       
+    //   from: "",
+    //   timeoutBlocks: 200,  
     // },
+    ganache: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 7545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+    },
 
-    // contracts_build_directory: path.join(__dirname, "../mobile_apps/assets"),
+    contracts_build_directory: "./build/ganache",
     // ropsten: {
     //   provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`),
     //   network_id: 3,       // Ropsten's id

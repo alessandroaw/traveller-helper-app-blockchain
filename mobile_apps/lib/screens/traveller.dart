@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
-import 'package:traveller_helper/components/secondary_app_bar.dart';
-import 'package:traveller_helper/components/page_heading.dart';
-import 'package:traveller_helper/components/th_bottom_bar.dart';
+import 'package:traveller_helper/components/components.dart';
 
 class Traveller extends StatefulWidget {
   @override
@@ -13,20 +11,12 @@ class _TravellerState extends State<Traveller> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Text(
-          'Traveller Helper',
-          style: kAppBarTextStyle,
-        ),
-        centerTitle: true,
-      ),
+      appBar: THAppBar(),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
             children: <Widget>[
-              SecondaryAppBar(balance: '10 ETH'),
-              PageHeading(text: 'Traveller Manager'),
+              THPageHeading(text: 'Traveller Manager'),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.teal,
