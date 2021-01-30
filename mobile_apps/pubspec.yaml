@@ -15,7 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.0
   web3dart: ^2.0.0-dev.9
   http: ^0.12.2
-  provider: ^4.3.2+3
+  qr_flutter: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -26,7 +26,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/
+    - assets/contracts/
+    - assets/images/
 
   fonts:
     - family: Pacifico

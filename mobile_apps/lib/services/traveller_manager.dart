@@ -13,18 +13,18 @@ class TravellerManager extends Contract {
       : photoStatus = contract.event('PhotoStatus');
 
   Future<String> proposePhoto() async {
-    var response = submit('proposePhoto', []);
+    var response = send('proposePhoto', []);
     return response;
   }
-  
+
   Future<String> approvePhoto(int index) async {
-    var response = submit('approvePhoto', [index]);
+    var response = send('approvePhoto', [index]);
     return response;
   }
 
   Future<List<dynamic>> getTraveller() async {
     EthereumAddress address = await credentials.extractAddress();
-    var response = query('getTraveller', [address]);
+    var response = call('getTraveller', [address]);
     return response;
   }
 
@@ -38,8 +38,10 @@ class TravellerManager extends Contract {
           ),
         )
         .listen((event) {
-          final decoded = photoStatus.decodeResults(event.topics, event.data);
-          
+      final decoded = photoStatus.decodeResults(event.topics, event.data);
+      String listedTraveller = decoded[0].toString();
+      String travellerManager = decoded[1].toString();
+      callback(listedTraveller, travellerManager);
     });
   }
 }
