@@ -1,35 +1,52 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:traveller_helper/utilities/constraints.dart';
 import 'package:traveller_helper/components/components.dart';
+import 'package:traveller_helper/services/repositories/user_repository.dart';
+import './cubit/traveller_cubit.dart';
 
 const tmAddress = '0x36b6ef957050C28E3A96Dc5D83Fc42ceb081893C';
 
-class Traveller extends StatefulWidget {
-  @override
-  _TravellerState createState() => _TravellerState();
-}
-
-class _TravellerState extends State<Traveller> {
+class TravellerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: THAppBar(),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              THPageHeading(text: 'Traveller Manager'),
-              TMDetails(),
-              QrBanner(
-                address: tmAddress,
-              ),
-            ],
+    return BlocProvider(
+      create: (_) {
+        return TravellerCubit(userRepository: context.read<UserRepository>());
+      },
+      child: Scaffold(
+        appBar: THAppBar(),
+        body: SingleChildScrollView(
+          child: Container(
+            child: BlocBuilder<TravellerCubit, Response<User>>(
+              buildWhen: (previous, current) =>
+                  previous.status != current.status,
+              builder: (context, state) {
+                if (state.status == Status.INTIIAL) {
+                  context.read<TravellerCubit>().fetchUser();
+                  return Container();
+                } else if (state.status == Status.ERROR) {
+                  return Text(state.message);
+                } else if (state.status == Status.COMPLETED) {
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      THPageHeading(text: 'Traveller Manager'),
+                      TMDetails(),
+                      QrBanner(
+                        address: state.data.ethereumAddress,
+                      ),
+                    ],
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
+            ),
           ),
         ),
+        bottomNavigationBar: THBottomBar(TH.traveller),
       ),
-      bottomNavigationBar: THBottomBar(TH.traveller),
     );
   }
 }

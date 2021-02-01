@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:traveller_helper/components/components.dart';
 import 'package:traveller_helper/services/contract_manager.dart';
+import 'package:traveller_helper/services/repositories/user_repository.dart';
 import 'package:traveller_helper/utilities/constraints.dart';
 import 'package:traveller_helper/services/account_manager.dart';
 
@@ -55,6 +56,14 @@ class _HelperPageState extends State<HelperPage> {
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.add_a_photo,
+        ),
+        onPressed: () {
+          print('lets help traveller');
+        },
       ),
       bottomNavigationBar: THBottomBar(TH.helper),
     );
