@@ -18,7 +18,7 @@
  *
  */
 
-// const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 // require('dotenv').config();
 // const infuraKey = "fj4jll3k.....";
 //
@@ -45,10 +45,13 @@ module.exports = {
 
     // private blockchain geth 
     development: {
+      provider: () => {
+        const testrpcMnemonic = "";
+        return new HDWalletProvider(testrpcMnemonic, "", 0, 10);
+      },
       network_id: "*",
       host: "", //server host where geth is runnning
       port: , //port where server geth is running       
-      from: "",
       timeoutBlocks: 200,  
     },
     // ganache: {
