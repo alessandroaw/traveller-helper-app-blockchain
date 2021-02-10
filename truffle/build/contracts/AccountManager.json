@@ -1703,6 +1703,45 @@
     "version": "0.6.0+commit.26b70077.Emscripten.clang"
   },
   "networks": {
+    "58343": {
+      "events": {
+        "0xb1ed47ced4562a888b3c47e728f82f7863e472cad724018fe1585bc6853ec82d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "name": "Logging",
+          "type": "event"
+        },
+        "0xecd283654fb12bc20d9bd711dad16f95a5ab4fa60709fb687865f7b0073b9b8d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "listedTraveller",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "travellerManager",
+              "type": "address"
+            }
+          ],
+          "name": "TravellerListing",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xBf9A6768f71Ee4d39029664d975c02F749b23f91",
+      "transactionHash": "0x4d4f4859cff0f9255746771c288086758c326b48eaf53ff317ba43fa9a74ca6d"
+    },
     "1611544243384": {
       "events": {
         "0xb1ed47ced4562a888b3c47e728f82f7863e472cad724018fe1585bc6853ec82d": {
@@ -1783,7 +1822,7 @@
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-02-03T02:13:44.616Z",
+  "updatedAt": "2021-02-10T09:36:36.553Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
