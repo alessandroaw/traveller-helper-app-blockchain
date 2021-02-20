@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:traveller_helper/utilities/constraints.dart';
 import 'package:traveller_helper/components/components.dart';
 
 class HelperSubmitPage extends StatelessWidget {

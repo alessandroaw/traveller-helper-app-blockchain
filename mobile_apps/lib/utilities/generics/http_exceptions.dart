@@ -29,6 +29,11 @@ class UnauthorisedException extends HttpException {
   UnauthorisedException([message]) : super(message, "Unauthorised: ");
 }
 
+// Thrown when HTTP error code 401 & 403 happes
+class EmptyResponseException extends HttpException {
+  EmptyResponseException([message]) : super(message, "Empty Response: ");
+}
+
 // Thrown when Invalid input
 class InvalidInputException extends HttpException {
   InvalidInputException([String message]) : super(message, "Invalid Input: ");

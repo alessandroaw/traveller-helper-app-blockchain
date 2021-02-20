@@ -3,6 +3,9 @@ import 'package:traveller_helper/services/contract_manager.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:traveller_helper/services/contract.dart';
 
+typedef void AccountManagerCallback(
+    String listedTraveller, String travellerManager);
+
 class AccountManager extends Contract {
   static final String key = 'AccountManager';
   DeployedContract contract;
@@ -24,7 +27,7 @@ class AccountManager extends Contract {
     return response;
   }
 
-  StreamSubscription<FilterEvent> listenEvent(Function callback) {
+  StreamSubscription<FilterEvent> listenEvent(AccountManagerCallback callback) {
     return ContractManager()
         .ethClient
         .events(

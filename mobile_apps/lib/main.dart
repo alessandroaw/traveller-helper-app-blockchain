@@ -15,9 +15,8 @@ void main() async {
 
 class App extends StatelessWidget {
   const App({
-    Key key,
     @required this.userRepository,
-  }) : super(key: key);
+  });
 
   final UserRepository userRepository;
 

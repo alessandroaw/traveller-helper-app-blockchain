@@ -9,7 +9,7 @@ class THPageHeading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.only(top: 10),
       child: Text(
         '$text',
         style: kHeadingTextStyle,

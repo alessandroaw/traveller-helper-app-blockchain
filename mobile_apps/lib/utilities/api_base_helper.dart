@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import './generics/http_exceptions.dart';
 
 class ApiBaseHelper {
-  String baseUrl = 'blockchain.luqmanr.xyz';
+  String baseUrl = '103.89.4.97';
   Map<String, String> _headers = {
     'Content-Type': 'application/json; charset=UTF-8',
   };
@@ -121,8 +121,10 @@ class ApiBaseHelper {
     switch (response.statusCode) {
       case 200:
       case 201:
+        if (response.body == '') {
+          throw EmptyResponseException();
+        }
         var responseJson = jsonDecode(response.body);
-        print(responseJson);
         return responseJson;
       case 400:
         throw BadRequestException(response.body);

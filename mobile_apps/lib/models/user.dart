@@ -9,6 +9,11 @@ class User {
     this.travellerDeposit,
   });
 
+  User.empty() {
+    User(
+        ethereumAddress: '', travellerDeposit: '', travellerManagerAddress: '');
+  }
+
   User.fromJson(Map<String, dynamic> json)
       : ethereumAddress = json['ethereumAddress'],
         travellerManagerAddress = json['travellerManagerAddress'],

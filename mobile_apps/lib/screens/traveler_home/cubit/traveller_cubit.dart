@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:traveller_helper/models/response.dart';
 import 'package:traveller_helper/models/user.dart';
+import 'package:traveller_helper/services/account_manager.dart';
 import 'package:traveller_helper/services/repositories/user_repository.dart';
 import 'traveller_state.dart';
 

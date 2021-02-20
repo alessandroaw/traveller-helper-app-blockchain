@@ -1765,6 +1765,45 @@
     "version": "0.6.0+commit.26b70077.Emscripten.clang"
   },
   "networks": {
+    "58343": {
+      "events": {
+        "0xb1ed47ced4562a888b3c47e728f82f7863e472cad724018fe1585bc6853ec82d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "name": "Logging",
+          "type": "event"
+        },
+        "0xecd283654fb12bc20d9bd711dad16f95a5ab4fa60709fb687865f7b0073b9b8d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "listedTraveller",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "travellerManager",
+              "type": "address"
+            }
+          ],
+          "name": "TravellerListing",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xBf9A6768f71Ee4d39029664d975c02F749b23f91",
+      "transactionHash": "0x4d4f4859cff0f9255746771c288086758c326b48eaf53ff317ba43fa9a74ca6d"
+    },
     "1611544243384": {
       "events": {
         "0xb1ed47ced4562a888b3c47e728f82f7863e472cad724018fe1585bc6853ec82d": {
@@ -1803,10 +1842,49 @@
       "links": {},
       "address": "0x0743C860E6976810d5DCD6ef4840F7A5dA796c26",
       "transactionHash": "0xbd9e64df8d179012231dee476486eb281994a8cc416c1f60af79c2bee6867744"
+    },
+    "1612317968099": {
+      "events": {
+        "0xb1ed47ced4562a888b3c47e728f82f7863e472cad724018fe1585bc6853ec82d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "message",
+              "type": "string"
+            }
+          ],
+          "name": "Logging",
+          "type": "event"
+        },
+        "0xecd283654fb12bc20d9bd711dad16f95a5ab4fa60709fb687865f7b0073b9b8d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "listedTraveller",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "travellerManager",
+              "type": "address"
+            }
+          ],
+          "name": "TravellerListing",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xa7D5655c498630DF8e13f376b001719ADeCD98C5",
+      "transactionHash": "0xf007a35849d4978b0a3458cb912cbb87a7d6f5f643616c066a8294684ae25269"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-01-25T03:16:31.709Z",
+  "updatedAt": "2021-02-10T09:36:36.553Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
