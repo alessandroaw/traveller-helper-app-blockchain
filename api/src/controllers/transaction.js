@@ -4,6 +4,10 @@ async function getHelperTrans(req, res, next) {
     const { helperAddress } = req.params;
     try {
         const transactions = await Transaction.find({ helperAddress: helperAddress.toLowerCase() }).populate('imageId');
+        if (transactions == null) {
+            console.log("Transaction not found")
+            res.status(404);
+        }
         res.status(200).send(transactions);
     } catch (e) {
         console.error(e);
@@ -16,6 +20,11 @@ async function getPendingTrans(req, res, next) {
     try {
         var pendingTransactions = [];
         const transactions = await Transaction.find({ travellerAddress: travellerAddress.toLowerCase() });
+        if (transactions == null) {
+            console.log("Transaction not found")
+            res.status(404);
+        }
+
         for (transaction of transactions) {
            if (transaction.approval === 'Pending') {
                pendingTransactions.push(transaction)
@@ -44,6 +53,10 @@ async function patch(req, res, next) {
     const { id } = req.params;
     try {
         const transaction = await Transaction.findByIdAndUpdate(id, {$set: {approval: req.body.approval}});
+        if (transactions == null) {
+            console.log("Transaction not found")
+            res.status(404);
+        }
         res.send(transaction);
     } catch(e) {
         console.error(e);

@@ -14,6 +14,10 @@ async function post (req, res, next) {
 async function getAllPhotosTraveller(req, res, next) {
     try {
         const photos = await Photo.find({travellerAddress: req.params.travellerAddress});
+        if (photos == null) {
+            console.log("Photos not found")
+            res.status(404);
+        }
         res.status(200).send(photos);
     } catch(e) {
         console.error(e);
@@ -24,6 +28,10 @@ async function getAllPhotosTraveller(req, res, next) {
 async function getAllPhotosHelper(req, res, next) {
     try {
         const photos = await Photo.find({helperAddress: req.params.helperAddress});
+        if (photos == null) {
+            console.log("Photos not found")
+            res.status(404);
+        }
         res.status(200).send(photos);
     } catch(e) {
         console.error(e);

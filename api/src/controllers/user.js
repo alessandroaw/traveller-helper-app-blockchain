@@ -24,6 +24,10 @@ async function login(req, res, next) {
 async function getUser(req, res, next) {
     try {
         const user = await User.findOne({ethereumAddress: req.params.ethereumAddress.toLowerCase()});
+        if (user == null) {
+            console.log("Ethreum address have not yet registered");
+            res.status(404);
+        }
         res.status(200).send(user);
     } catch(e) {
         console.error(e);
@@ -33,9 +37,14 @@ async function getUser(req, res, next) {
 
 async function userToTraveller(req, res, next) {
     const { ethereumAddress } = req.params;
+    
     try {
-        const travellerManagerAddress = await User.findOneAndUpdate({ethereumAddress: ethereumAddress.toLowerCase()}, {travellerManagerAddress: req.body.travellerManagerAddress.toLowerCase()});
-        res.send(travellerManagerAddress);
+        const user = await User.findOneAndUpdate({ethereumAddress: ethereumAddress.toLowerCase()}, {travellerManagerAddress: req.body.travellerManagerAddress.toLowerCase()});
+        if (user == null) {
+            console.log("Ethreum address have not yet registered");
+            res.status(404);
+        }
+        res.send(user);
     } catch(e) {
         console.error(e);
         res.status(400).send(e);
@@ -45,8 +54,12 @@ async function userToTraveller(req, res, next) {
 async function travellerDeposit(req, res, next) {
     const { ethereumAddress } = req.params;
     try {
-            const travellerDepositEth = await User.findOneAndUpdate({ethereumAddress: ethereumAddress.toLowerCase()}, {travellerDeposit: req.body.travellerDeposit});
-        res.send(travellerDepositEth);
+            const user = await User.findOneAndUpdate({ethereumAddress: ethereumAddress.toLowerCase()}, {travellerDeposit: req.body.travellerDeposit});
+            if (user == null) {
+                console.log("Ethreum address have not yet registered");
+                res.status(404);
+            }
+        res.send(user);
     } catch(e) {
         console.error(e);
         res.status(400).send(e);
