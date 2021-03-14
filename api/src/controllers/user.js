@@ -1,15 +1,21 @@
 const User = require('../models/user');
 
 async function login(req, res, next) {
-
+var userData;
     // print request body
     console.log("This is request body of USER LOGIN ", req.body);
-    
-    var userData = {
-        ethereumAddress: req.body.ethereumAddress.toLowerCase(),
-        travellerManagerAddress: req.body.travellerManagerAddress.toLowerCase(),
-        travellerDeposit: req.body.travellerDeposit
-    }
+    if (req.body.travellerManagerAddress) {
+        userData = {
+            ethereumAddress: req.body.ethereumAddress.toLowerCase(),
+            travellerManagerAddress: req.body.travellerManagerAddress.toLowerCase(),
+            travellerDeposit: req.body.travellerDeposit
+        }
+    } else {
+        userData = {
+            ethereumAddress: req.body.ethereumAddress.toLowerCase(),
+            travellerDeposit: req.body.travellerDeposit
+        }
+    }       
 
     User.create(userData, (error, match) => {
         if (error) {
