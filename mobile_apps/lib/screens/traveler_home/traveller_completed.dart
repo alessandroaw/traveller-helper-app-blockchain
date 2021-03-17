@@ -42,7 +42,7 @@ class TMDetails extends StatelessWidget {
             text: '2 ETH',
             buttonText: 'Deposit',
             onPressed: () {
-              print('100');
+              print('TODO: deposit process');
             },
           ),
           SizedBox(

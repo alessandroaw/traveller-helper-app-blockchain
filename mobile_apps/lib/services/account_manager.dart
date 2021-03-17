@@ -17,13 +17,13 @@ class AccountManager extends Contract {
 
   Future<String> enlistTraveller() async {
     EthereumAddress address = await credentials.extractAddress();
-    var response = send('enlistTraveller', [address]);
+    var response = await send('enlistTraveller', [address]);
     return response;
   }
 
   Future<List<dynamic>> getTraveller() async {
     EthereumAddress address = await credentials.extractAddress();
-    var response = call('getTraveller', [address]);
+    var response = await call('getTraveller', [address]);
     return response;
   }
 
@@ -38,8 +38,8 @@ class AccountManager extends Contract {
         )
         .listen((event) {
       final decoded = travellerListing.decodeResults(event.topics, event.data);
-      String listedTraveller = decoded[0] as String;
-      String travellerManager = decoded[1] as String;
+      String listedTraveller = decoded[0].toString();
+      String travellerManager = decoded[1].toString();
       callback(listedTraveller, travellerManager);
     });
   }

@@ -16,7 +16,6 @@ class ApiBaseHelper {
     var responseJson;
     try {
       Uri uri = new Uri.http(baseUrl, '/api/$url');
-      print('GET: $uri');
       http.Response response = await http
           .get(
             uri,
@@ -39,7 +38,6 @@ class ApiBaseHelper {
     var responseJson;
     try {
       Uri uri = new Uri.http(baseUrl, '/api/$url');
-      print('POST: $uri');
       http.Response response = await http
           .post(
             uri,
@@ -59,7 +57,6 @@ class ApiBaseHelper {
     var responseJson;
     try {
       Uri uri = new Uri.http(baseUrl, '/api/$url');
-      print('PATCH: $uri');
       http.Response response = await http
           .patch(
             uri,
@@ -79,7 +76,6 @@ class ApiBaseHelper {
     var responseJson;
     try {
       Uri uri = new Uri.http(baseUrl, '/api/$url');
-      print('PUT: $uri');
       http.Response response = await http
           .put(
             uri,
@@ -99,7 +95,6 @@ class ApiBaseHelper {
     var responseJson;
     try {
       Uri uri = new Uri.http(baseUrl, '/api/$url');
-      print('DELETE: $uri');
       http.Response response = await http
           .delete(
             uri,
@@ -131,6 +126,8 @@ class ApiBaseHelper {
       case 401:
       case 403:
         throw UnauthorisedException(response.body);
+      case 404:
+        throw EmptyResponseException();
       case 500:
       default:
         throw FetchDataException(

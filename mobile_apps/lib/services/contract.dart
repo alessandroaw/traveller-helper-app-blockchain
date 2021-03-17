@@ -16,10 +16,13 @@ abstract class Contract {
               function: ethFunction,
               parameters: args,
             ),
+            chainId: 143,
           );
       return result;
     } catch (e) {
-      rethrow;
+      print("error happened here");
+      print(e);
+      return "error";
     }
   }
 

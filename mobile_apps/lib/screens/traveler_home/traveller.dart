@@ -5,8 +5,6 @@ import 'package:traveller_helper/services/repositories/user_repository.dart';
 import './cubit/traveller_cubit.dart';
 import 'traveller_completed.dart';
 
-const tmAddress = '0x36b6ef957050C28E3A96Dc5D83Fc42ceb081893C';
-
 class TravellerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,7 +13,11 @@ class TravellerPage extends StatelessWidget {
     const bottomBarHeight = 56;
     return BlocProvider(
       create: (_) {
-        return TravellerCubit(userRepository: context.read<UserRepository>());
+        UserRepository ur = context.read<UserRepository>();
+        return TravellerCubit(
+          accountManager: ur.accountManager,
+          userRepository: ur,
+        );
       },
       child: Scaffold(
         appBar: THAppBar(),
@@ -45,7 +47,7 @@ class TravellerPage extends StatelessWidget {
                     );
                     break;
                   default:
-                    return CircularProgressIndicator();
+                    return Center(child: CircularProgressIndicator());
                 }
               },
             ),
@@ -128,7 +130,7 @@ class TravellerRegistration extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               onPressed: () {
-                context.read<TravellerCubit>().fetchUser();
+                context.read<TravellerCubit>().enlistTraveller();
               },
               child: Text(
                 'Daftar Menjadi Traveller',

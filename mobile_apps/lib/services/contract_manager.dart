@@ -32,7 +32,6 @@ class ContractManager {
   ContractManager._internal() {
     httpClient = http.Client();
     ethClient = Web3Client(rpcUrl, httpClient);
-    print('creating CM');
   }
 
   Credentials get credentials => _credentials;
@@ -40,7 +39,7 @@ class ContractManager {
 
   Future<void> initializeCreds() async {
     try {
-      _credentials = await ethClient.credentialsFromPrivateKey(privateKeys[1]);
+      _credentials = await ethClient.credentialsFromPrivateKey(privateKeys[2]);
       _address = await _credentials.extractAddress();
     } catch (e) {
       print('error initializing creds: $e');
@@ -64,25 +63,10 @@ class ContractManager {
         await rootBundle.loadString('assets/contracts/$key.json');
     var decodedJson = jsonDecode(contractJson);
     String abiCode = jsonEncode(decodedJson['abi']);
-    String contractAddress =
-        decodedJson['networks']['1612317968099']['address'];
+    String contractAddress = decodedJson['networks']['58343']['address'];
 
     final contract = DeployedContract(ContractAbi.fromJson(abiCode, key),
         EthereumAddress.fromHex(contractAddress));
-    print(contract);
     return contract;
   }
-}
-
-void main() async {
-  final cm = ContractManager();
-  await cm.initializeCreds();
-
-  try {
-    print(await cm.getBalance());
-  } catch (e) {
-    print(e);
-  }
-
-  print('finished');
 }

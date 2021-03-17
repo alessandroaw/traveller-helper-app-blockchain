@@ -9,10 +9,22 @@ import 'package:traveller_helper/utilities/generics/http_exceptions.dart';
 class UserRepository {
   ApiBaseHelper _api = ApiBaseHelper();
   String address = ContractManager().address;
+  final AccountManager accountManager;
+
+  UserRepository(this.accountManager);
+
+  Future<String> enlistTraveller() async {
+    try {
+      String result = await accountManager.enlistTraveller();
+      return result;
+    } on Exception {
+      rethrow;
+    }
+  }
 
   Future<User> fetchUser() async {
+    print(address);
     try {
-      print('called');
       final json = await _api.get('user/$address');
 
       return User.fromJson(json);
@@ -23,10 +35,12 @@ class UserRepository {
     }
   }
 
-  Future<void> registerTraveller(String tmAddress) async {
+  Future<User> userToTraveller(String tmAddress) async {
     try {
       final json = await _api.post('user/beTraveller/$address',
           body: jsonEncode({"travellerManagerAddress": tmAddress}));
+
+      return User.fromJson(json);
     } on Exception {
       rethrow;
     }

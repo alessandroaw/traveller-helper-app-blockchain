@@ -29,7 +29,6 @@ class _SecondaryAppBar extends StatelessWidget {
     return FutureBuilder<String>(
         future: ContractManager().getBalance(),
         builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-          print(snapshot.data);
           return AppBar(
             elevation: 0,
             shape: RoundedRectangleBorder(

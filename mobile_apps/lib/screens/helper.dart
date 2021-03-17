@@ -12,13 +12,16 @@ class HelperPage extends StatefulWidget {
 
 class _HelperPageState extends State<HelperPage> {
   AccountManager am;
-  var subscription;
 
   void initializeAccountManager() async {
     am = AccountManager(
       contract: await ContractManager().loadContract(AccountManager.key),
       credentials: ContractManager().credentials,
     );
+
+    am.listenEvent((listedTraveller, travellerManager) {
+      print('traveller: $listedTraveller, tmAddress: $travellerManager');
+    });
   }
 
   @override
@@ -56,8 +59,11 @@ class _HelperPageState extends State<HelperPage> {
         child: Icon(
           Icons.add_a_photo,
         ),
-        onPressed: () {
-          print('lets help traveller');
+        onPressed: () async {
+          print('helper page');
+          String result = await am.enlistTraveller();
+          print(result);
+          print('done');
         },
       ),
       bottomNavigationBar: THBottomBar(TH.helper),
