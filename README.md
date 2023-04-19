@@ -1,36 +1,34 @@
 # Traveller Helper
-Saat berlibur ke luar negeri, turis-turis akan mengabadikan momen dengan mengambil gambar dengan kamera ataupun gawai yang mereka miliki. 
+Traveller Helper is a blockchain-based mobile application designed to assist tourists in capturing their vacation memories. While traveling abroad, tourists often take pictures with their cameras or mobile devices. However, these devices may experience problems such as low battery or limited storage space. To make matters worse, tourists often have limited access to the internet, making it difficult for them to upload their photos to the cloud. If these problems occur, tourists may be unable to capture their memorable moments.
 
-Dalam proses pengambilan foto tidak jarang terdapat masalah seperti baterai gawai habis, atau storage dari gawai habis. Hal ini diperburuk dengan sulitnya akses internet bagi turis sehingga storage yang tadinya penuh tidak bisa di-upload ke cloud. Jika hal-hal ini terjadi, turis tidak akan dapat melakukan apa-apa untuk mengabadikan momen mereka. 
-
-Permasalahan di atas yang memicu untuk dibuatnya suatu aplikasi berbasis blockchain untuk turis dapat meminta tolong orang setempat untuk membantu mengabadikan momen mereka dan penolong akan diberikan insentif.
+To address this issue, Traveller Helper allows tourists to request assistance from local residents in capturing their vacation photos. In return, the local residents receive an incentive in the form of cryptocurrency.
 
 
-## Menjalankan Traveller Helper
-terdapat tiga komponen dari Traveller Helper, yaitu:
+## Running Traveller Helper
+There are three component for this project:
 
 1. HTTP Server
 2. Smart Contract
 3. Mobile Apps
 
-Berikut adalah cara untuk menjalankan Traveller-Helper secara lokal.
+To run Traveller Helper locally, follow these steps:
 
 ### HTTP Server
-Jalankan script berikut untuk menjalankan HTTP server.
+Run this script to start HTTP server.
 ```
 npm install
 npm start
 ```
 
 ### Smart Contracts
-Jalankan script berikut untuk melakukan *deployment* smart contract pada jaringan blockchain.
+Run the following script to deploy the smart contract on the blockchain network:
 ```
 truffle migrate --network infura
 ```
 
 ### Mobile Apps
-Jalankan script dibawah ini untuk membangun file apk mobile apps.
+Run the following script to build the mobile app APK file:
 ```
 flutter build apk --split-per-abi --dart-define=IP_ADDRESS={local http server address}
 ```
-install app via apk pada perangkat android
+After building the APK file, you can install the app on your Android device.
